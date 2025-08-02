@@ -1,0 +1,207 @@
+
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBECE9;
+    filter: blur();
+}
+
+.mainBox {
+    width: 90vw;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+    /* making something invisible?  */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5) ;
+    border-radius: 40px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+}
+
+header {
+    height: 60px;
+    background-color: #5F7470;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #E0E2DB;
+    font-size: 30px;
+    font-family: showcard gothic, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+#etchBox {
+    flex: 1;
+    background-color: #D2D4C8;
+    padding:20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#controlPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    order: 2;
+    flex: 2;
+}
+
+#container {
+    height: 400px;
+    width: 400px;
+    padding: 6px;
+    margin: 0px;
+    border: 2px solid #4A5956;
+    border-radius: 8px;
+    background-color: white;
+    order: 1;
+
+}
+
+.square {
+    border: 0.5px solid #EBECE9;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.square.hovered {
+    background-color:  #eeebebff;
+    border: 1px solid black;
+}
+
+
+
+
+
+footer {
+    height: 30px;
+    background-color: #5F7470;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E0E2DB;
+    font-family: ink free;
+}
+
+
+
+
+/* @media (max-width: 600px) {
+    #mainBox {
+        width: 95vw;
+        height: 95vh;
+        border-radius: 0;
+    }
+    
+    header {
+        height: 50px;
+    }
+
+    footer {
+        height: 25px;
+    }
+
+    #etchBox {
+        padding: 10px;
+    }
+} */
+
+.eraser-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: filter 0.1s ease;
+    border: 2px solid #5F7470;
+    border-radius: 8px;
+    padding: 4px;
+    /* Default state - inactive (header color) */
+    filter: brightness(0) saturate(100%) invert(27%) sepia(8%) saturate(1234%) hue-rotate(118deg) brightness(95%) contrast(88%);
+}
+
+.eraser-icon.active {
+    /* Darker version of body color */
+    filter: brightness(0) saturate(100%) invert(98%) sepia(2%) saturate(0%) hue-rotate(0deg) brightness(70%) contrast(96%);
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.eraser-icon.inactive {
+    /* Header color: #5F7470 */
+    filter: brightness(0) saturate(100%) invert(27%) sepia(8%) saturate(1234%) hue-rotate(118deg) brightness(95%) contrast(88%);
+    transform: scale(1);
+    box-shadow: none;
+}
+
+
+#eraser {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.1s ease;
+}
+
+#reset {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.reset-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    transition: filter 0.1s ease;
+    border: 2px solid #5F7470;
+    border-radius: 8px;
+    padding: 4px;
+    /* Default state - inactive (header color) */
+    filter: brightness(0) saturate(100%) invert(27%) sepia(8%) saturate(1234%) hue-rotate(118deg) brightness(95%) contrast(88%);
+}
+
+#gridInput {
+    background-color: #EBECE9;
+    height: 30px;
+    width: 35px;
+    padding: 0px 0px 0px 8px;
+    font-size: 16px;
+    border: 0px;
+    margin: 0px;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    position: relative;
+    z-index: 1;
+}
+
+.generate {
+    gap: 0px;
+    display: flex;
+    border: 0px solid;
+    border-radius: 10px;
+    
+}
+
+#generateBtn {
+    background-color: #5F7470;
+    color: #E0E2DB ;
+    border: 0px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#generateBtn:hover {
+    background-color: #4f615e;
+}
